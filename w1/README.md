@@ -1,5 +1,7 @@
 # Week I
 
+To get started, fork this repo if you haven't already and then clone it to your local machine. Navigate to this directory in your terminal and run `npm install`. To start your server run `npm start`. From there, start working on the objectives below (there are no specs, just the goals below)!
+
 ## Objective: Build 2 sets of CRUD routes for 2 models, Students and Tests
 
 ### Details
