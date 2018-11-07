@@ -6,7 +6,7 @@ To get started, fork this repo if you haven't already and then clone it to your 
 
 ### Details
 
-	- For now, moodels are just objects that live in express app score
+	- For now, models are just objects that live in express app score
 	
 	```
 		Test {id : 0, score: 99, subject : 'Physics', studentID : 2}
