@@ -121,7 +121,7 @@ describe('Models', function() {
 
     describe('instance methods', () => {
       describe('initials', () => {
-        xit('should return the initials of a student', () => {
+        it('should return the initials of a student', () => {
           return student.save().then(savedStudent => {
             expect(savedStudent.initials()).to.equal('P P');
           });
@@ -151,14 +151,14 @@ describe('Models', function() {
     });
 
     describe('attributes definition', () => {
-      xit('includes `subject` and `grade` fields', () => {
+      it('includes `subject` and `grade` fields', () => {
         return test.save().then(savedTest => {
           expect(savedTest.subject).to.equal('Tree-climbing');
           expect(savedTest.grade).to.equal(79);
         });
       });
 
-      xit('requires `subject`', () => {
+      it('requires `subject`', () => {
         test.subject = null;
         return test.validate().then(
           () => {
@@ -168,7 +168,7 @@ describe('Models', function() {
         );
       });
 
-      xit('requires `grade`', () => {
+      it('requires `grade`', () => {
         test.grade = null;
         return test.validate().then(
           () => {
@@ -192,7 +192,7 @@ describe('Models', function() {
       });
 
       describe('passing', () => {
-        xit('should return the test instances that have grade greater than 70', () => {
+        it('should return the test instances that have grade greater than 70', () => {
           return Test.passing().then(foundTests => {
             expect(foundTests).to.be.an.instanceOf(Array);
             expect(foundTests).to.have.length(3);
@@ -200,7 +200,7 @@ describe('Models', function() {
         });
       });
       describe('findBySubject', () => {
-        xit('should return all instances by given subject', () => {
+        it('should return all instances by given subject', () => {
           return Test.findBySubject('Outdoor Survival').then(foundTests => {
             expect(foundTests).to.be.an.instanceOf(Array);
             expect(foundTests).to.have.length(2);
@@ -210,7 +210,7 @@ describe('Models', function() {
     });
 
     describe('associations', () => {
-      xit('belongs to a student', () => {
+      it('belongs to a student', () => {
         const newStudent = Student.create({
           firstName: 'Pepper',
           lastName: 'Potts',

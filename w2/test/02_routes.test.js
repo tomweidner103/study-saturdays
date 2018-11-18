@@ -52,7 +52,7 @@ describe('Routes', () => {
     });
 
     describe('GET /student', () => {
-      xit('retrieves all the students', () => {
+      it('retrieves all the students', () => {
         return agent
           .get('/student')
           .expect('Content-Type', /json/)
@@ -65,7 +65,7 @@ describe('Routes', () => {
     });
 
     describe('GET /student/:id', () => {
-      xit('retrieves a single student by their id', () => {
+      it('retrieves a single student by their id', () => {
         return agent
           .get(`/student/${pepper.id}`)
           .expect(200)
@@ -75,13 +75,13 @@ describe('Routes', () => {
           });
       });
 
-      xit('returns a 404 error if student does not exist in DB', () => {
+      it('returns a 404 error if student does not exist in DB', () => {
         return agent.get('/student/09432').expect(404);
       });
     });
 
     describe('POST /student', () => {
-      xit('creates a new Student instance', () => {
+      it('creates a new Student instance', () => {
         return agent
           .post('/student')
           .send({
@@ -98,7 +98,7 @@ describe('Routes', () => {
     });
 
     describe('PUT /student/:id', () => {
-      xit('updates an instance of a student', () => {
+      it('updates an instance of a student', () => {
         return agent
           .put(`/student/${pepper.id}`)
           .send({ firstName: 'Salty' })
